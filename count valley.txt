@@ -1,0 +1,26 @@
+https://www.hackerrank.com/challenges/counting-valleys/problem
+#include <iostream>
+#include <string>
+using namespace std;
+
+int countingValleys(int steps, string path) {
+    int seaLevel = 0, valleys = 0;
+    for (char step : path) {
+        if (step == 'U') {
+            seaLevel++;
+            if (seaLevel == 0) valleys++;
+        } else {
+            seaLevel--;
+        }
+    }
+    return valleys;
+}
+
+int main() {
+    int steps;
+    cin >> steps;
+    string path;
+    cin >> path;
+    cout << countingValleys(steps, path) << endl;
+    return 0;
+}
